@@ -1,5 +1,6 @@
 import shutil
 import os
+import sys
 from os import walk
 from os.path import splitext
 from transliterate import translit
@@ -22,15 +23,15 @@ unknown_extensions = set()
 
 
 def get_path_dir():
-    abs_path = input("Please enter the absolute path to the folder you want to sort: ")
-    if len(abs_path) == 0:
-        print("Directory is not specified. Try again.\n")
-        main()
-    elif os.path.isdir(abs_path):
-        return abs_path
-    else:
-        print("Entered path doesn't exist. Try again.\n")
-        main()
+    try:
+        abs_path = sys.argv[1]
+        if os.path.isdir(abs_path):
+            return abs_path
+        else:
+            raise IsADirectoryError
+    except Exception:
+        print("Something went wrong. Please try again.")
+        exit()
 
 
 # rename and normalize all files in given directory
@@ -49,7 +50,6 @@ def delete_empty_folders(path):
                 full_path = os.path.join(path, folder)
                 if os.path.isdir(full_path):
                     delete_empty_folders(full_path)
-
     # remove empty folder
     if len(folders) == 0:
         os.rmdir(path)
