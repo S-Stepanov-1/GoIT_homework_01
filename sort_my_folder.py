@@ -8,7 +8,7 @@ from string import ascii_letters, digits
 
 CATEGORIES = {"images": ("jpeg", "png", "jpg", "svg"),
               "video": ("avi", "mp4", "mov", "mkv"),
-              "documents": ("doc", "docx", "txt", "pdf", "xlsx", "pptx"),
+              "documents": ("doc", "docx", "txt", "pdf", "xlsx", "pptx", "djvu "),
               "audio": ("mp3", "ogg", "wav", "amr"),
               "archives": ("zip", "gz", "tar")
               }
