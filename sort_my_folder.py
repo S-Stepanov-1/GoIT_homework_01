@@ -10,7 +10,7 @@ CATEGORIES = {"images": ("jpeg", "png", "jpg", "svg"),
               "video": ("avi", "mp4", "mov", "mkv"),
               "documents": ("doc", "docx", "txt", "pdf", "xlsx", "pptx"),
               "audio": ("mp3", "ogg", "wav", "amr"),
-              "archives": ("zip",)
+              "archives": ("zip", "gz", "tar")
               }
 
 ALL_EXTENSIONS = ("jpeg", "png", "jpg", "svg", "avi", "mp4", "mov", "mkv", "doc", "docx", "txt", "pdf", "xlsx", "pptx",
